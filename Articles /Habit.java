@@ -1,4 +1,4 @@
-[6:46 PM, 06/01/2024] .: package mainClasses;
+package mainClasses;
 
 public class DenreesAlimentaires extends Article {
 	
