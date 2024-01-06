@@ -1,4 +1,4 @@
-[6:32 PM, 06/01/2024] .: package mainClasses;
+ package mainClasses;
 import java.util.Date;
 
 public class Habitant extends Personne {
