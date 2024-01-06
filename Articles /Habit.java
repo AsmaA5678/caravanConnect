@@ -65,12 +65,28 @@ public class Habit extends Article {
 	
 	@Override
 	public void setPaquet(Paquet paquet) throws UselessArticleException {
-		if ("enfant".equals(this.categorie)) {
-			if (!paquet.getFamille().contientEnfants()) 
-				throw new UselessArticleException("il n'y a aucun enfant dans cette famille qui peut bénéficier de cet article");
-			super.paquet = paquet;
-			paquet.listeArticles.add(this);
-		}
-	}
+        if (estArticleInutilePourPaquet(paquet)) {
+            throw new UselessArticleException("Cet article est inutile pour le paquet spécifié.");
+        }
+
+        super.paquet = paquet;
+        paquet.listeArticles.add(this);
+    }
+	private boolean estArticleInutilePourPaquet(Paquet paquet) {
+        switch (this.categorie.toLowerCase()) {
+            case "enfant":
+                return !paquet.getFamille().estSansEnfants();
+            case "nh":
+                return !paquet.getFamille().estSansAdolescent();
+            case "jeune adulte":
+                return !paquet.getFamille().estSansJeuneAdulte();
+            case "adulte":
+                return !paquet.getFamille().estSansAdulte();
+            case "personne âgée":
+                return !paquet.getFamille().estSansPersonneAgee();
+            default:
+                return false; 
+        }
+    }
 	
 }
