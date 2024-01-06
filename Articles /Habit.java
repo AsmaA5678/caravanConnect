@@ -1,17 +1,5 @@
 package mainClasses;
 
-public class DenreesAlimentaires extends Article {
-	
-	static int denreesAlimentairesDisponibles = 0;
-
-	public DenreesAlimentaires(int idArticle) {
-		super(idArticle);
-		denreesAlimentairesDisponibles++;
-	}
-
-}
-[6:46 PM, 06/01/2024] .: package mainClasses;
-
 public class Habit extends Article {
 	
 	private String genre; // f ou m
