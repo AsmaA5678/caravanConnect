@@ -64,7 +64,7 @@ public class Habit extends Article {
         switch (this.categorie.toLowerCase()) {
             case "enfant":
                 return !paquet.getFamille().estSansEnfants();
-            case "nh":
+            case "adolescant":
                 return !paquet.getFamille().estSansAdolescent();
             case "jeune adulte":
                 return !paquet.getFamille().estSansJeuneAdulte();
