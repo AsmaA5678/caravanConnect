@@ -1,7 +1,5 @@
-//import java.util.ArrayList;
+package mainClasses;
 import java.util.Date;
-
-//import java.util.Date;
 
 public class Habitant extends Personne {
 	
@@ -11,7 +9,7 @@ public class Habitant extends Personne {
 	private String profession; 
 	private String etatSanitaire; // sain ou malade
 
-	public Beneficiaire(int idHabitant, String nom, String prenom, Date dateNaissance, int numTelephone, Famille famille, Character genre, String profession, String etatSanitaire) {
+	public Habitant(int idHabitant, String nom, String prenom, String dateNaissance, int numTelephone, Famille famille, Character genre, String profession, String etatSanitaire) {
 		super(nom, prenom, dateNaissance, numTelephone);
 		this.setIdHabitant(idHabitant);
 		this.famille = famille;
